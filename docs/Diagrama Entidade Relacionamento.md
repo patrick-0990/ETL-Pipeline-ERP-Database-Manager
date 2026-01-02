@@ -1,100 +1,49 @@
-\## Diagrama de Entidade Relacionamento (DER)
-
-
-
 ```mermaid
-
 erDiagram
+    REPRES ||--|{ FORNCLIEN : atende
+    FORNCLIEN ||--|{ PRODUTOS : fornece
+    FORNCLIEN ||--|{ PEDIDOS : realiza
+    PEDIDOS ||--|{ PEDIDOSITEM : contem
+    PRODUTOS ||--|{ PEDIDOSITEM : compoe
 
-&nbsp;   REPRES --{ FORNCLIEN  atende
+    REPRES {
+        int CODREPRES PK
+        string TIPOPESS
+        string NOMEFAN
+        float COMISSAOBASE
+    }
 
-&nbsp;   FORNCLIEN --{ PRODUTOS  fornece
+    FORNCLIEN {
+        int CODCLIFOR PK
+        int TIPOCF
+        int CODREPRES FK
+        string NOMEFAN
+        string CIDADE
+        string UF
+    }
 
-&nbsp;   FORNCLIEN --{ PEDIDOS  realiza
+    PRODUTOS {
+        int CODPROD PK
+        string NOMEPROD
+        int CODFORNE FK
+        float VALCUSTO
+        float VALVENDA
+        float QTDEESTQ
+    }
 
-&nbsp;   PEDIDOS --{ PEDIDOSITEM  contém
+    PEDIDOS {
+        int NUMPED PK
+        date DATAPPED
+        int CODCLIEN FK
+        float VALOR
+        int SITUACAO
+    }
 
-&nbsp;   PRODUTOS --{ PEDIDOSITEM  compõe
-
-
-
-&nbsp;   REPRES {
-
-&nbsp;       int CODREPRES PK
-
-&nbsp;       string TIPOPESS
-
-&nbsp;       string NOMEFAN
-
-&nbsp;       float COMISSAOBASE
-
-&nbsp;   }
-
-
-
-&nbsp;   FORNCLIEN {
-
-&nbsp;       int CODCLIFOR PK
-
-&nbsp;       int TIPOCF
-
-&nbsp;       int CODREPRES FK
-
-&nbsp;       string NOMEFAN
-
-&nbsp;       string CIDADE
-
-&nbsp;       string UF
-
-&nbsp;   }
-
-
-
-&nbsp;   PRODUTOS {
-
-&nbsp;       int CODPROD PK
-
-&nbsp;       string NOMEPROD
-
-&nbsp;       int CODFORNE FK
-
-&nbsp;       float VALCUSTO
-
-&nbsp;       float VALVENDA
-
-&nbsp;       float QTDEESTQ
-
-&nbsp;   }
-
-
-
-&nbsp;   PEDIDOS {
-
-&nbsp;       int NUMPED PK
-
-&nbsp;       date DATAPPED
-
-&nbsp;       int CODCLIEN FK
-
-&nbsp;       float VALOR
-
-&nbsp;       int SITUACAO
-
-&nbsp;   }
-
-
-
-&nbsp;   PEDIDOSITEM {
-
-&nbsp;       int NUMPED PK, FK
-
-&nbsp;       int NUMITEM PK
-
-&nbsp;       int CODPROD FK
-
-&nbsp;       float QTDE
-
-&nbsp;       float VALUNIT
-
-&nbsp;   }
-
+    PEDIDOSITEM {
+        int NUMPED PK
+        int NUMITEM PK
+        int CODPROD FK
+        float QTDE
+        float VALUNIT
+    }
+```

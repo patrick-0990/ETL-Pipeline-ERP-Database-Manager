@@ -18,7 +18,7 @@ O objetivo principal é demonstrar a manipulação de dados, garantia de integri
     * `FOREIGN KEY` constraints.
     * `CHECK` constraints para validação de domínio (ex: UF com 2 caracteres, Tipos de Pessoa).
 
-## 🗂 Estrutura do Banco de Dados
+##  Estrutura do Banco de Dados
 
 O banco de dados `bd_erp_n2.db` é criado automaticamente seguindo rigorosamente as regras de negócio:
 
@@ -50,7 +50,7 @@ O banco de dados `bd_erp_n2.db` é criado automaticamente seguindo rigorosamente
     ```
 4. **Resultado:** O script gerará o arquivo `bd_erp_n2.db` e exibirá o log de processamento no terminal.
 
-## 📝 Aprendizados e Destaques
+##  Aprendizados e Destaques
 
 Este projeto foi desenvolvido para exercitar conceitos fundamentais de Engenharia de Dados e Banco de Dados:
 * Tratamento de **PK Composta** em SQLite.

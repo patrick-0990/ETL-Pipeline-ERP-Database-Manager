@@ -59,5 +59,5 @@ Este projeto foi desenvolvido para exercitar conceitos fundamentais de Engenhari
 
 ---
 
-- Kauê Patrick
+*Kauê Patrick*
 
